@@ -1,0 +1,54 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    max-height: 100dvh;
+    max-height: 100vh;
+    justify-content: space-between;
+
+    margin: 0;
+    padding: 0;
+}
+
+main>* {
+    overflow-y: scroll;
+    margin: 0;
+}
+
+main>.code-preview-container {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+main>.editor-container {
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow-y: auto;
+}
+
+pre.code-preview pre,
+pre.code-preview code {
+    font-size: 11px;
+    font-family: 'PlemolJP35 HS', 'PlemolJP35', 'PlemolJP', 'firacode', monospace;
+}
+pre.code-preview {
+    overflow-y: scroll;
+    display: flex;
+    padding-block: 0.33em;
+    line-height: 1.2;
+}
+pre.code-preview > pre.line-number {
+    text-align: right;
+    margin: 0;
+    margin-inline: 1em;
+}
+
+.code-preview-container h4 {
+    margin-bottom: 0.33em;
+}
+.code-preview-container pre {
+    margin: 0.33em;
+}

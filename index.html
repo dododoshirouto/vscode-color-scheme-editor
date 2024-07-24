@@ -1,0 +1,74 @@
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>DODO VSCode Color Scheme Editor</title>
+
+  <!-- <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css" />
+  <link rel="stylesheet" href="https://dododoshirouto.github.io/dodo-simple.css/sample/dodo-simple.css" /> -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style id="style-color-scheme"></style>
+
+  <script src="https://mymp.dodoneko.site/new/scripts/ref.js"></script>
+  <script src="functions.js"></script>
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <main>
+    <div class="code-preview-container">
+      <h4>python</h4>
+
+
+
+      <pre class="code-preview code-preview-python"><pre class="line-number"></pre><code lang="python">def dump_args(func):
+    "This decorator dumps out the arguments passed to a function before calling it"
+    argnames = func.func_code.co_varnames[:func.func_code.co_argcount]
+    fname = func.func_name
+    def echo_func(*args,**kwargs):
+        print fname, ":", ', '.join(
+            '%s=%r' % entry
+            for entry in zip(argnames,args) + kwargs.items())
+        return func(*args, **kwargs)
+    return echo_func
+
+@dump_args
+def f1(a,b,c):
+    print a + b + c
+
+f1(1, 2, 3)
+
+def precondition(precondition, use_conditions=DEFAULT_ON):
+    return conditions(precondition, None, use_conditions)
+
+def postcondition(postcondition, use_conditions=DEFAULT_ON):
+    return conditions(None, postcondition, use_conditions)
+
+class conditions(object):
+    __slots__ = ('__precondition', '__postcondition')
+
+    def __init__(self, pre, post, use_conditions=DEFAULT_ON):
+        if not use_conditions:
+            pre, post = None, None
+
+        self.__precondition  = pre
+        self.__postcondition = post
+          </code></pre>
+
+
+
+    </div>
+    <div class="editor-container">
+      <p><label>Import color-theme Json file: <input type="file" accept="application/json"></label></p>
+      <p><label>type:
+          <select>
+            <option>dark</option>
+            <option>light</option>
+          </select>
+      </label></p>
+    </div>
+  </main>
+</body>
+
+</html>
